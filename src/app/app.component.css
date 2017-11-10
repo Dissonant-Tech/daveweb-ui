@@ -13,11 +13,6 @@
     width: 100%;
     margin-top: 30px;
     max-height: 250px;
-
-    app-terminal {
-        height: 300px;
-        max-height: 300px;
-    }
 }
 
 .blog-container {
