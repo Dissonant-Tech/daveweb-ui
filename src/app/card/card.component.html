@@ -1,0 +1,25 @@
+
+<div class="card {{card.classes}}">
+
+  <img *ngIf="card.image" class="card-img" src="{{card.image}}" alt="">
+
+  <div *ngIf="card.text && card.title" class="card-body">
+    <h4 *ngIf="card.title" class="card-title">{{card.title}}</h4>
+    <p *ngIf="card.text" class="card-text">{{card.text}}</p>
+    <p *ngIf="card.footer" class="card-text">
+      <small class="text-muted">{{card.footer}}</small>
+    </p>
+  </div>
+
+  <blockquote *ngIf="card.text && !card.title" class="blockquote mb-0 card-body">
+    <p>
+      {{card.text}}
+    </p>
+    <footer *ngIf="card.footer" class="blockquote-footer">
+      <small class="card.footer">
+        {{card.footer}}
+      </small>
+    </footer>
+  </blockquote>
+
+</div>

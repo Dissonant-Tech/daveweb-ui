@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { TerminalComponent } from './terminal/terminal.component';
 import { OsxtitlebarComponent } from './osxtitlebar/osxtitlebar.component';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { OsxtitlebarComponent } from './osxtitlebar/osxtitlebar.component';
     AppComponent,
     NavComponent,
     TerminalComponent,
-    OsxtitlebarComponent
+    OsxtitlebarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule

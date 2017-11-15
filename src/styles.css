@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~jquery.terminal/css/jquery.terminal.min.css";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+html, body {
+    height: 100%;
+}

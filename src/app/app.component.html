@@ -1,14 +1,19 @@
 
 <div class="container-fluid app-container">
   <div class="row justify-content-center">
-    <div class="terminal-container card col-8">
+    <div class="terminal-container card col-6">
       <app-osxtitlebar></app-osxtitlebar>
       <app-terminal></app-terminal>
     </div>
   </div>
 
-  <div class="blog-container row">
-    <div class="col">
+  <div class="blog-container container-fluid">
+    <div class="container">
+      <div class="card-columns">
+        <app-card *ngFor="let card of cards"
+          [card]="card">
+        </app-card>
+      </div>
     </div>
   </div>
 </div>
