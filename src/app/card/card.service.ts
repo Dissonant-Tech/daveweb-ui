@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Card } from './card';
 
 @Injectable()
 export class CardService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
 }

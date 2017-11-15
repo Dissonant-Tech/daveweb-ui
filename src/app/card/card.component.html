@@ -1,6 +1,10 @@
 
 <div [@fadeIn] class="card {{card.classes}}">
 
+  <div *ngIf="card.header" class="card-header">
+    {{card.header}}
+  </div>
+
   <img *ngIf="card.image" class="card-img" src="{{card.image}}" alt="">
 
   <div *ngIf="card.text && card.title" class="card-body">
@@ -9,6 +13,7 @@
     <p *ngIf="card.footer" class="card-text">
       <small class="text-muted">{{card.footer}}</small>
     </p>
+    <a *ngIf="card.link" href="{{card.link}}" class="btn btn-primary">Read More</a>
   </div>
 
   <blockquote *ngIf="card.text && !card.title" class="blockquote mb-0 card-body">
@@ -16,10 +21,14 @@
       {{card.text}}
     </p>
     <footer *ngIf="card.footer" class="blockquote-footer">
-      <small class="card.footer">
+      <small>
         {{card.footer}}
       </small>
     </footer>
   </blockquote>
+
+  <div *ngIf="card.date" class="text-center card-footer text-muted">
+    {{card.date}}
+  </div>
 
 </div>

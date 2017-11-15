@@ -1,0 +1,12 @@
+
+blockquote {
+    $footer-color: #e7e7e7;
+
+    small {
+        color: $footer-color;
+    }
+
+    .blockquote-footer {
+        color: $footer-color;
+    }
+}
