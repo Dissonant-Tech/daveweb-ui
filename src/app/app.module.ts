@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { RestModule } from 'rest-ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { TerminalComponent } from './terminal/terminal.component';
-import { OsxtitlebarComponent } from './osxtitlebar/osxtitlebar.component';
-import { CardComponent } from './card/card.component';
-import { CardService } from './card/card.service';
+import { TerminalComponent } from './components/terminal/terminal.component';
+import { OsxtitlebarComponent } from './components/osxtitlebar/osxtitlebar.component';
+
+import { CardComponent } from './components/card/card.component';
+import { CardService, CardRest } from './services/card.service';
+
 import { ArticleComponent } from './pages/article/article.component';
 import { CardpageComponent } from './pages/cardpage/cardpage.component';
+
+import { environment } from './../environments/environment';
 
 
 const appRoutes: Routes = [
@@ -27,7 +31,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     TerminalComponent,
     OsxtitlebarComponent,
     CardComponent,
@@ -37,14 +40,16 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: environment.routeTrace }
     ),
+    RestModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
   providers: [
-    CardService
+    CardService,
+    CardRest
   ],
   bootstrap: [AppComponent]
 })

@@ -4789,6 +4789,14 @@ resolve@^1.1.6, resolve@^1.1.7, resolve@^1.3.2:
   dependencies:
     path-parse "^1.0.5"
 
+rest-core@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/rest-core/-/rest-core-0.2.1.tgz#add9d5b309d559a645f99fef2e39c03191015a76"
+
+rest-ngx@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rest-ngx/-/rest-ngx-0.1.1.tgz#ae7f123e99bd0fd1460fa122b919a6afb324cc98"
+
 right-align@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/right-align/-/right-align-0.1.3.tgz#61339b722fe6a3515689210d24e14c96148613ef"
