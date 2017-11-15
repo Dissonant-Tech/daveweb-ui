@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { TerminalComponent } from './terminal/terminal.component';
 import { OsxtitlebarComponent } from './osxtitlebar/osxtitlebar.component';
 import { CardComponent } from './card/card.component';
+import { CardService } from './card/card.service';
 
 
 @NgModule({
@@ -15,12 +18,16 @@ import { CardComponent } from './card/card.component';
     NavComponent,
     TerminalComponent,
     OsxtitlebarComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
