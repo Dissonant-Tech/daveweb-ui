@@ -1,5 +1,6 @@
 
 <div class="container-fluid app-container">
+
   <div class="row justify-content-center">
     <div class="terminal-container card col-6">
       <app-osxtitlebar></app-osxtitlebar>
@@ -7,13 +8,8 @@
     </div>
   </div>
 
-  <div class="blog-container container-fluid">
-    <div class="container">
-      <div class="card-columns">
-        <app-card *ngFor="let card of cards"
-          [card]="card">
-        </app-card>
-      </div>
-    </div>
+  <div class="main-container container-fluid">
+    <router-outlet></router-outlet>
   </div>
+
 </div>
