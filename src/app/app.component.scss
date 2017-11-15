@@ -26,3 +26,14 @@
     padding-top: 4%;
     border: 1px #e7e7e7 solid;
 }
+
+.fadeout {
+    position: fixed;
+    bottom: 0; /* top is also an option */
+    width:100%;
+    height: 5em; // or anything you want the height to be
+    background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+    );
+}
