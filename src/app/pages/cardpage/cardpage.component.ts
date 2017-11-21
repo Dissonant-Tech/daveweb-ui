@@ -73,7 +73,10 @@ export class CardpageComponent implements OnInit {
   constructor(private _cardService: CardService) { }
 
   ngOnInit() {
-    this._cardService.getAll();
+    this._cardService.getAll().then((resp) => {
+      console.log(resp);
+      this.cards = resp.results;
+    });
   }
 
 }

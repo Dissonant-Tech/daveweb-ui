@@ -17,7 +17,7 @@ import {
 @Injectable()
 @RestParams({
   // IRestParams
-  pathPrefix: '/cards'
+  pathPrefix: '/blog/cards'
 })
 export class CardRest extends Rest {
 

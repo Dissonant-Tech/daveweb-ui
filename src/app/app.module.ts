@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RestModule } from 'rest-ngx';
+import { RestGlobalConfig } from 'rest-core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -27,6 +28,8 @@ const appRoutes: Routes = [
   },
   { path: '**', redirectTo: '' }
 ];
+
+RestGlobalConfig.url = environment.apiUrl;
 
 @NgModule({
   declarations: [
