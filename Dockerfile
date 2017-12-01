@@ -1,5 +1,4 @@
-FROM node:alpine
-
+FROM node:latest
 
 MAINTAINER David Rodriguez
 
@@ -17,4 +16,7 @@ RUN yarn install
 
 COPY . /usr/src/app
 
-ENTRYPOINT ["ng", "serve"]
+EXPOSE 4200
+VOLUME ["/dist"]
+# ENTRYPOINT ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check", "--environment=prod"]
+CMD ["ng", "build", "--prod", "--no-delete-output-path", "--output-path", "/dist"]

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://api:8000/',
+  apiUrl: 'https://api.davidrodriguez.io/',
   routeTrace: false
 };

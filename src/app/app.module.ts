@@ -14,6 +14,7 @@ import { OsxtitlebarComponent } from './components/osxtitlebar/osxtitlebar.compo
 import { CardComponent } from './components/card/card.component';
 import { CardService, CardRest } from './services/card.service';
 
+import { ArticleService, ArticleRest } from './services/article.service';
 import { ArticleComponent } from './pages/article/article.component';
 import { CardpageComponent } from './pages/cardpage/cardpage.component';
 
@@ -52,7 +53,9 @@ RestGlobalConfig.url = environment.apiUrl;
   ],
   providers: [
     CardService,
-    CardRest
+    CardRest,
+    ArticleService,
+    ArticleRest
   ],
   bootstrap: [AppComponent]
 })

@@ -10,10 +10,10 @@ export class CardpageComponent implements OnInit {
 
   public cards = [];
 
-  constructor(private _cardService: CardService) { }
+  constructor(private service: CardService) { }
 
   ngOnInit() {
-    this._cardService.getAll().then((resp) => {
+    this.service.getAll().then((resp) => {
       console.log(resp);
       this.cards = resp.results;
     });

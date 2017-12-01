@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ArticleService } from '../../services/article.service';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-article',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  private article = {};
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: ArticleService
+  ) {}
 
   ngOnInit() {
   }
