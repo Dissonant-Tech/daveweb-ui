@@ -17,6 +17,7 @@ import { CardService, CardResource } from './services/card.service';
 import { ArticleService, ArticleResource } from './services/article.service';
 import { ArticleComponent } from './pages/article/article.component';
 import { CardpageComponent } from './pages/cardpage/cardpage.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 import { environment } from './../environments/environment';
 
@@ -25,6 +26,10 @@ const appRoutes: Routes = [
   { path: 'article/:id',      component: ArticleComponent },
   { path: '',
     component: CardpageComponent,
+    pathMatch: 'full'
+  },
+  { path: 'about',
+    component: AboutPageComponent,
     pathMatch: 'full'
   },
   { path: '**', redirectTo: '' }
@@ -40,6 +45,7 @@ ResourceGlobalConfig.url = environment.apiUrl;
     CardComponent,
     ArticleComponent,
     CardpageComponent,
+    AboutPageComponent,
   ],
   imports: [
     RouterModule.forRoot(

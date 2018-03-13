@@ -19,13 +19,13 @@ export class AppComponent {
       this.echo(text);
     },
     'whoami': () => {
-      this.getTerm().echo('David Rodriguez, Software Developer');
+      this.getTerm().echo('David Rodriguez, Software Developer. Type /about to view more!');
     },
     'clear': () => {
       this.getTerm().clear();
       this.getTerm().echo(this.greeting);
     },
-    'about': () => {
+    '/about': () => {
       this.router.navigate(['/about']);
     }
   };
