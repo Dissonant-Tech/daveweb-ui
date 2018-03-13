@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api:8000/',
+  apiUrl: 'http://192.168.99.100:8025/',
   routeTrace: true
 };

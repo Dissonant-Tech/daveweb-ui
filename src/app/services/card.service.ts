@@ -1,37 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Card } from '../components/card/card';
 import {
-  Rest,
-  RestParams,
-  RestCRUD,
-  RestModel,
-  RestHandler,
-  RestAction,
-  RestRequestMethod,
-  IRestMethodStrict,
-  IRestMethod,
-  IRestActionInner
-} from 'rest-core';
+  Resource,
+  ResourceParams,
+  ResourceCRUD,
+  ResourceModel,
+  ResourceHandler,
+  ResourceAction,
+  ResourceRequestMethod,
+  IResourceMethodStrict,
+  IResourceMethod,
+  IResourceActionInner
+} from '@ngx-resource/core';
 
 
 @Injectable()
-@RestParams({
-  // IRestParams
-  pathPrefix: '/blog/cards'
+@ResourceParams({
+  // IResourceParams
+  pathPrefix: '/blog/cards',
+  removeTrailingSlash: false
 })
-export class CardRest extends Rest {
+export class CardResource extends Resource {
 
-  @RestAction({
+  @ResourceAction({
     path: '/{!id}'
   })
-  get: IRestMethod<{id: string}, Card>; // will call /user/id
+  get: IResourceMethod<{id: string}, Card>; // will call /user/id
 
-  @RestAction({
+  @ResourceAction({
     path: '/'
   })
-  getAll: IRestMethod<{}, [Card]>;
+  getAll: IResourceMethod<{}, [Card]>;
 
-  constructor(restHandler: RestHandler) {
+  constructor(restHandler: ResourceHandler) {
     super(restHandler);
   }
 
@@ -42,14 +43,14 @@ export class CardService {
 
   private card: Card = null;
 
-  constructor(private cardRest: CardRest) {}
+  constructor(private cardResource: CardResource) {}
 
   get(id: string): Promise<any> {
-    return this.cardRest.get({id});
+    return this.cardResource.get({id});
   }
 
   getAll(): Promise<any> {
-    return this.cardRest.getAll();
+    return this.cardResource.getAll();
   }
 
 }

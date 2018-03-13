@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RestModule } from 'rest-ngx';
-import { RestGlobalConfig } from 'rest-core';
+import { ResourceModule } from '@ngx-resource/handler-ngx-http';
+import { ResourceGlobalConfig } from '@ngx-resource/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,9 +12,9 @@ import { TerminalComponent } from './components/terminal/terminal.component';
 import { OsxtitlebarComponent } from './components/osxtitlebar/osxtitlebar.component';
 
 import { CardComponent } from './components/card/card.component';
-import { CardService, CardRest } from './services/card.service';
+import { CardService, CardResource } from './services/card.service';
 
-import { ArticleService, ArticleRest } from './services/article.service';
+import { ArticleService, ArticleResource } from './services/article.service';
 import { ArticleComponent } from './pages/article/article.component';
 import { CardpageComponent } from './pages/cardpage/cardpage.component';
 
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: '' }
 ];
 
-RestGlobalConfig.url = environment.apiUrl;
+ResourceGlobalConfig.url = environment.apiUrl;
 
 @NgModule({
   declarations: [
@@ -46,16 +46,16 @@ RestGlobalConfig.url = environment.apiUrl;
       appRoutes,
       { enableTracing: environment.routeTrace }
     ),
-    RestModule.forRoot(),
+    ResourceModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
   providers: [
     CardService,
-    CardRest,
+    CardResource,
     ArticleService,
-    ArticleRest
+    ArticleResource
   ],
   bootstrap: [AppComponent]
 })

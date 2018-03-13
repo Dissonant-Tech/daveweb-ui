@@ -18,5 +18,4 @@ COPY . /usr/src/app
 
 EXPOSE 4200
 VOLUME ["/dist"]
-# ENTRYPOINT ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check", "--environment=prod"]
 CMD ["ng", "build", "--prod", "--no-delete-output-path", "--output-path", "/dist"]

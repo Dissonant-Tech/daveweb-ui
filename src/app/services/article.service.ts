@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
 import {
-  Rest,
-  RestParams,
-  RestCRUD,
-  RestModel,
-  RestHandler,
-  RestAction,
-  RestRequestMethod,
-  IRestMethodStrict,
-  IRestMethod,
-  IRestActionInner
-} from 'rest-core';
+  Resource,
+  ResourceParams,
+  ResourceCRUD,
+  ResourceModel,
+  ResourceHandler,
+  ResourceAction,
+  ResourceRequestMethod,
+  IResourceMethodStrict,
+  IResourceMethod,
+  IResourceActionInner
+} from '@ngx-resource/core';
 
 
 @Injectable()
-@RestParams({
-  // IRestParams
+@ResourceParams({
+  // IResourceParams
   pathPrefix: '/blog/articles'
 })
-export class ArticleRest extends Rest {
+export class ArticleResource extends Resource {
 
-  @RestAction({
+  @ResourceAction({
     path: '/{!id}'
   })
-  get: IRestMethod<{id: string}, {}>; // will call /user/id
+  get: IResourceMethod<{id: string}, {}>; // will call /user/id
 
-  @RestAction({
+  @ResourceAction({
     path: '/'
   })
-  getAll: IRestMethod<{}, [{}]>;
+  getAll: IResourceMethod<{}, [{}]>;
 
-  constructor(restHandler: RestHandler) {
+  constructor(restHandler: ResourceHandler) {
     super(restHandler);
   }
 
@@ -41,14 +41,14 @@ export class ArticleService {
 
   private article: {} = null;
 
-  constructor(private articleRest: ArticleRest) {}
+  constructor(private articleResource: ArticleResource) {}
 
   get(id: string): Promise<any> {
-    return this.articleRest.get({id});
+    return this.articleResource.get({id});
   }
 
   getAll(): Promise<any> {
-    return this.articleRest.getAll();
+    return this.articleResource.getAll();
   }
 
 }
