@@ -48,14 +48,14 @@ ResourceGlobalConfig.url = environment.apiUrl;
     AboutPageComponent,
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ResourceModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: environment.routeTrace }
     ),
-    ResourceModule.forRoot(),
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule
   ],
   providers: [
     CardService,
