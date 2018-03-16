@@ -1,22 +1,37 @@
 
 <div class="container-fluid about-page">
-  <div class="about-jumbotron">
+  <div class="about-jumbotron bg-warning">
     <div class="row justify-content-center">
       <h1 class="display-4 text-uppercase font-weight-bold">
         <strong>Admin/Developer</strong>
       </h1>
     </div>
     <div class="row justify-content-center">
-      <i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="github"></i>
-      <i class="fa fa-linkedin" data-toggle="tooltip" data-placement="bottom" title="linkedin"></i>
-      <i class="fa fa-envelope" data-toggle="tooltip" data-placement="bottom" title="email"></i>
+      <a href="https://github.com/Dissonant-Tech">
+        <i class="fa fa-github"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/dissonant/">
+        <i class="fa fa-linkedin"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="linkedin"></i>
+      </a>
+      <a href="mailto:dissonant.tech@gmail.com">
+        <i class="fa fa-envelope"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="email"></i>
+      </a>
     </div>
-    <div class="row justify-content-center">
-      <button type="button" class="btn btn-lg btn-outline-light">Contact Me</button>
-    </div>
+    <!-- <div class="row justify-content-center"> -->
+    <!--   <button type="button" class="btn btn-lg btn-outline-light">Contact Me</button> -->
+    <!-- </div> -->
   </div>
 
-  <div class="about-me">
+  <div class="about-me bg-light">
 
     <div class="row justify-content-center">
       <i class="fa fa-angle-left font-weight-bold"></i>
@@ -25,22 +40,80 @@
     </div>
 
     <div class="card-deck">
-      <div class="card text-center">
-        <div class="card-body">
+      <div class="card text-center text-white bg-dark">
+        <div class="card-header">
           <div class="card-title"><i class="fa fa-mobile"></i></div>
-          <p class="card-text">some info</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            It all started with the HTC HD2. It was a Windows Mobile 6.5
+            phone released in 2010. The specs at the time were pretty great,
+            but the OS was clunky and killed any performance the hardware had to
+            offer. So I decided to try something out: Flashing an Android ROM.
+          </p>
+          <p class="card-text">
+            I really enjoyed the new OS, and the performance was amazing
+            compared to the previous speeds, but most of all, I was hooked. From
+            there I started to tinker with Android ROMS and the AOSP in general.
+            In that vein, I also started to read up on Java programming, so that
+            I could tinker further with my new found hobby.
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+          2010-2012
         </div>
       </div>
-      <div class="card text-center">
-        <div class="card-body">
+      <div class="card text-center bg-light">
+        <div class="card-header">
           <div class="card-title"><i class="fa fa-terminal"></i></div>
-          <p class="card-text">some info</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Once I had learned I could extend an OS with my own tools (something)
+            that had never occurred to me previously while using operating systems
+            such as Windows) I started to yearn for an OS more feature rich and
+            versatile, so I began to branch out and see what other operating
+            systems I could run on my phone. Thats when I learned you could run
+            an entire Linux OS on your Android phone, and connect to the local VNC
+            client using any VNC app on your phone. It was clunky, and a bit
+            awkward, but nevertheless, I was hooked once more.
+          </p>
+          <p class="card-text">
+            I then started to install Linux on my desktops as well. Ubuntu 12.04
+            was the first if I remember correctly. I found Linux amazing, the guts
+            of the operating system were right there for you to explore, all
+            organized as files. I became a surgeon, dissecting and analyzing different
+            parts of the system, as well as patching new programs and scripts. I
+            learned and fell in love with the CLI and now use the command line
+            extensively in my day-to-day.
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+          2012-2014
         </div>
       </div>
-      <div class="card text-center">
-        <div class="card-body">
+      <div class="card text-center text-white bg-dark">
+        <div class="card-header">
           <div class="card-title"><i class="fa fa-code"></i></div>
-          <p class="card-text">some info</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Of course, with my dive into Linux  and customization I began also to
+            dive deeper into programming and scripting. I started using python more
+            and more, as well as listening to programming and Linux related podcasts.
+            Where I first got the Idea to setup my own website and blog as a
+            personal project.
+          </p>
+          <p class="card-text">
+            My first website was a personal challenge of sorts. I wanted to deploy
+            something from scratch, no wordpress, no heroku, no firebase, etc. I
+            spun up a VPS (a DigitalOcean droplet) and got to work setting up
+            django with uwsgi (and later gunicorn), nginx, postgres, and  using
+            `git push` to deploy my code.
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+          2014-Present
         </div>
       </div>
     </div>
