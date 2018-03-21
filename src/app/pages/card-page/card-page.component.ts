@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-cardpage',
-  templateUrl: './cardpage.component.html',
-  styleUrls: ['./cardpage.component.scss'],
+  selector: 'app-card-page',
+  templateUrl: './card-page.component.html',
+  styleUrls: ['./card-page.component.scss'],
 })
-export class CardpageComponent implements OnInit {
+export class CardPageComponent implements OnInit {
 
   public cards = [];
 

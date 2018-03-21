@@ -3,14 +3,19 @@
   <div class="row justify-content-center">
     <div class="terminal-container card col-lg-8 col-sm-12 col-md-10">
       <app-osxtitlebar></app-osxtitlebar>
-      <app-terminal 
+      <app-terminal
         (term)="setTerm($event)"
         [greeting]="greeting"
         [commands]="commands"></app-terminal>
     </div>
   </div>
 
+
   <div class="main-container container-fluid">
+    <app-nav-tabs class="app-nav"
+      [links]="links"
+      ></app-nav-tabs>
     <router-outlet></router-outlet>
   </div>
+
 </div>

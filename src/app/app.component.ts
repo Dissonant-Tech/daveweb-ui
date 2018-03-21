@@ -39,11 +39,22 @@ export class AppComponent implements OnInit {
     }
   };
 
-  constructor(private router: Router) {}
+  links = [
+    {
+      name: 'Home',
+      route: '/home'
+    }, {
+      name: 'About',
+      route: '/about'
+    }
+  ];
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     $(() => {
-      $('[data-toggle="tooltip"]').tooltip()
+      $('[data-toggle="tooltip"]').tooltip();
     });
   }
 

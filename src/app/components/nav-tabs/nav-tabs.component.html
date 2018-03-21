@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item" *ngFor="let link of links">
+    <a class="nav-link" 
+      routerLink="{{link.route}}"
+      routerLinkActive="active"
+      >{{link.name}}</a>
+  </li>
+</ul>

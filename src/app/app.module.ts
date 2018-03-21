@@ -16,23 +16,27 @@ import { CardService, CardResource } from './services/card.service';
 
 import { ArticleService, ArticleResource } from './services/article.service';
 import { ArticleComponent } from './pages/article/article.component';
-import { CardpageComponent } from './pages/cardpage/cardpage.component';
+import { CardPageComponent } from './pages/card-page/card-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 import { environment } from './../environments/environment';
+import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
 
 
 const appRoutes: Routes = [
-  { path: 'article/:id',      component: ArticleComponent },
-  { path: '',
-    component: CardpageComponent,
+  { path: 'article/:id',
+    component: ArticleComponent,
+    pathMatch: 'full'
+  },
+  { path: 'home',
+    component: CardPageComponent,
     pathMatch: 'full'
   },
   { path: 'about',
     component: AboutPageComponent,
     pathMatch: 'full'
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 ResourceGlobalConfig.url = environment.apiUrl;
@@ -44,8 +48,9 @@ ResourceGlobalConfig.url = environment.apiUrl;
     OsxtitlebarComponent,
     CardComponent,
     ArticleComponent,
-    CardpageComponent,
+    CardPageComponent,
     AboutPageComponent,
+    NavTabsComponent,
   ],
   imports: [
     BrowserModule,
