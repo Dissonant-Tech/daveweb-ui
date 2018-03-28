@@ -1,4 +1,25 @@
-<div class="container">
-  <div class="">
+
+<div [@fadeIn] class="article-wrapper container">
+  <div class="title-wrapper">
+    <h1 class="title">
+      {{article.title}}
+    </h1>
+    <div class="sub-title">
+      <span class="badge badge-pill badge-secondary">
+        {{article.created_at}}
+      </span>
+      <span class="author badge badge-pill badge-success">
+        {{article.author}}
+      </span>
+      <span class="categories" *ngFor="let tag of article.categories">
+        <span class="badge badge-pill badge-primary">{{tag}}</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content"
+      [innerHTML]="article.content">
+    </div>
   </div>
 </div>

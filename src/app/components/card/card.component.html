@@ -12,7 +12,9 @@
     <p *ngIf="card.footer" class="card-text">
       <small class="text-muted">{{card.footer}}</small>
     </p>
-    <a *ngIf="card.article" href="/article/{{card.article}}" class="btn btn-primary">Read More</a>
+    <a *ngIf="card.article" 
+      [routerLink]="['/article', card.article]"
+      class="btn btn-primary">Read More</a>
   </div>
 
   <blockquote *ngIf="card.text && !card.title" class="blockquote mb-0 card-body">

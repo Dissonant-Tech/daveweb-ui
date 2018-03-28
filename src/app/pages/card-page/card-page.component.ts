@@ -113,7 +113,6 @@ export class CardPageComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().then((resp) => {
-      console.log(resp);
       this.cards = resp.results;
     });
   }

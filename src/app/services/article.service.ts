@@ -39,8 +39,6 @@ export class ArticleResource extends Resource {
 @Injectable()
 export class ArticleService {
 
-  private article: {} = null;
-
   constructor(private articleResource: ArticleResource) {}
 
   get(id: string): Promise<any> {
