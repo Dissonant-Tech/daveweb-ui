@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api:8025/',
+  apiUrl: 'http://localhost:8025/',
   routeTrace: true
 };

@@ -1,7 +1,7 @@
 <div class="container-fluid app-container">
 
-  <div class="row justify-content-center">
-    <div class="terminal-container card col-lg-8 col-sm-12 col-md-10">
+  <div class="row justify-content-center terminal-container">
+    <div class="terminal-wrapper card col-lg-8 col-sm-12 col-md-10">
       <app-osxtitlebar></app-osxtitlebar>
       <app-terminal
         (term)="setTerm($event)"
@@ -15,7 +15,10 @@
     <app-nav-tabs class="app-nav"
       [links]="links"
       ></app-nav-tabs>
-    <router-outlet></router-outlet>
+
+    <div class="router-wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
 </div>
