@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Card } from './card';
 import {
   trigger,
   state,
@@ -25,7 +24,7 @@ import {
   ]
 })
 export class CardComponent implements OnInit {
-  @Input() card: Card;
+  @Input() card: any;
 
   constructor() { }
 

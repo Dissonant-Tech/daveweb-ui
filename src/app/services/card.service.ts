@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Card } from '../components/card/card';
 import {
   Resource,
   ResourceParams,
@@ -25,12 +24,12 @@ export class CardResource extends Resource {
   @ResourceAction({
     path: '/{!id}'
   })
-  get: IResourceMethod<{id: string}, Card>; // will call /user/id
+  get: IResourceMethod<{id: string}, any>; // will call /user/id
 
   @ResourceAction({
     path: '/'
   })
-  getAll: IResourceMethod<{}, [Card]>;
+  getAll: IResourceMethod<{}, [any]>;
 
   constructor(restHandler: ResourceHandler) {
     super(restHandler);
@@ -41,7 +40,7 @@ export class CardResource extends Resource {
 @Injectable()
 export class CardService {
 
-  private card: Card = null;
+  private card: any = null;
 
   constructor(private cardResource: CardResource) {}
 
