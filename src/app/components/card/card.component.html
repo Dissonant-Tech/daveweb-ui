@@ -1,5 +1,6 @@
 
-<div [@fadeIn] class="card {{card.classes}}">
+<div [@fadeIn] class="card text-center {{card.classes}}"
+  [ngClass]="{'bg-primary text-white': card.type === 'BannerCard'}">
 
   <div *ngIf="card.title" class="card-header">
     {{card.title}}
@@ -8,18 +9,17 @@
   <img *ngIf="card.image" class="card-img" src="{{card.image}}" alt="">
 
   <div *ngIf="card.text && card.title" class="card-body">
-    <p *ngIf="card.text" class="card-text">{{card.text}}</p>
-    <p *ngIf="card.footer" class="card-text">
+    <p *ngIf="card.text" class="card-text" [innerHTML]="card.text"></p>
+    <p *ngIf="card.footer" class="card-footer">
       <small class="text-muted">{{card.footer}}</small>
     </p>
-    <a *ngIf="card.article" 
+    <a *ngIf="card.article"
       [routerLink]="['/article', card.article]"
       class="btn btn-primary">Read More</a>
   </div>
 
   <blockquote *ngIf="card.text && !card.title" class="blockquote mb-0 card-body">
-    <p>
-      {{card.text}}
+    <p [innerHTML]="card.text">
     </p>
     <footer *ngIf="card.footer" class="blockquote-footer">
       <small>
@@ -29,7 +29,7 @@
   </blockquote>
 
   <div *ngIf="card.date_visible" class="text-center card-footer text-muted">
-    {{card.created_at}}
+    {{card.created_at | date }}
   </div>
 
 </div>
