@@ -39,6 +39,15 @@ export class AppComponent implements OnInit {
     }
   };
 
+  helpText = {
+    'help': 'prints this message',
+    'echo': 'echos its input',
+    'whoami':  'a feeble attempt at answering an existential question',
+    'clear': 'get the terminal back to normal',
+    '/home': 'Navigate to the home page',
+    '/about': 'Navigate to the about me page'
+  };
+
   links = [
     {
       name: 'Home',
@@ -59,7 +68,12 @@ export class AppComponent implements OnInit {
   }
 
   genHelpText() {
-    return `Available commands:\n\t ${Object.keys(this.commands)}`;
+    let result = `Available commands:\t\t ${Object.keys(this.commands)}\n`;
+    result += 'COMMAND\t\t\tDESCRIPTION\n';
+    Object.entries(this.helpText).forEach(([k, v]) => {
+      result += `\t${k}:\t\t${v}\n`;
+    });
+    return result;
   }
 
   setTerm(term) {

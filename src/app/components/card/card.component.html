@@ -1,6 +1,6 @@
 
 <div [@fadeIn] class="card text-center {{card.classes}}"
-  [ngClass]="{'bg-primary text-white': card.type === 'BannerCard'}">
+  [ngClass]="{'bg-primary text-white': card.type == 'BannerCard' || card.type == 'QuoteCard'}">
 
   <div *ngIf="card.title" class="card-header">
     {{card.title}}
