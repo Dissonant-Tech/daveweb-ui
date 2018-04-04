@@ -16,8 +16,8 @@
       [links]="links"
       ></app-nav-tabs>
 
-    <div class="router-wrapper">
-      <router-outlet></router-outlet>
+    <div [@routerTransition]="getState(outlet)" class="router-wrapper">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
 

@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { routerTransition } from './app.animations';
 declare var $: any;
 
 @Component({
   selector: 'app-root',
+  animations: [
+    routerTransition
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -82,5 +86,9 @@ export class AppComponent implements OnInit {
 
   getTerm() {
     return this.term;
+  }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.animate;
   }
 }

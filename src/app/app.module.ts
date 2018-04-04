@@ -23,18 +23,27 @@ import { environment } from './../environments/environment';
 import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
 
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   { path: 'article/:id',
     component: ArticleComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      state: 'article'
+    }
   },
   { path: 'home',
     component: CardPageComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      animate: 'left'
+    }
   },
   { path: 'about',
     component: AboutPageComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      animate: 'right'
+    }
   },
   { path: '**', redirectTo: 'home' }
 ];
