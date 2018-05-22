@@ -40,7 +40,7 @@ export class CardResource extends Resource {
 @Injectable()
 export class CardService {
 
-  private card: any = null;
+  private cards: any = null;
 
   constructor(private cardResource: CardResource) {}
 
@@ -49,7 +49,9 @@ export class CardService {
   }
 
   getAll(): Promise<any> {
-    return this.cardResource.getAll();
+    if (!this.cards) {
+      this.cards = this.cardResource.getAll();
+    }
+    return this.cards;
   }
-
 }

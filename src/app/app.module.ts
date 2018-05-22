@@ -15,6 +15,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardService, CardResource } from './services/card.service';
 
 import { ArticleService, ArticleResource } from './services/article.service';
+import { ArticleResolver } from './services/article.resolve.service';
 import { ArticleComponent } from './pages/article/article.component';
 import { CardPageComponent } from './pages/card-page/card-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
@@ -28,7 +29,10 @@ export const appRoutes: Routes = [
     component: ArticleComponent,
     pathMatch: 'full',
     data: {
-      state: 'article'
+      animate: 'article'
+    },
+    resolve: {
+      article: ArticleResolver
     }
   },
   { path: 'home',
@@ -74,6 +78,7 @@ ResourceGlobalConfig.url = environment.apiUrl;
   providers: [
     CardService,
     CardResource,
+    ArticleResolver,
     ArticleService,
     ArticleResource
   ],

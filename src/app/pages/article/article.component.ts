@@ -9,23 +9,12 @@ import {
   transition
 } from '@angular/animations';
 
-import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
-  animations: [
-    trigger('fadeIn', [
-      transition('void => *', [
-        style({
-          transform: 'translateY(10%)',
-          opacity: 0
-        }),
-        animate(450)
-      ])
-    ])
-  ]
+  animations: []
 })
 export class ArticleComponent implements OnInit {
 
@@ -40,12 +29,6 @@ export class ArticleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = params['id'];
-
-      this.service.get(this.id.toString()).then((resp) => {
-        this.article = resp;
-      });
-    });
+    this.article = this.route.snapshot.data.article;
   }
 }
